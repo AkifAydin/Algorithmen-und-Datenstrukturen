@@ -1,0 +1,27 @@
+model List
+
+class List
+  attributes
+    elements:Sequence(OclAny)
+
+  operations
+    append(element:OclAny)
+    
+    remove(index:Integer)
+    
+    insertAt(element:OclAny, index:Integer)
+    
+    size():Integer = 
+      self.elements->size()
+    
+    indexOf(element:OclAny) : Integer =
+      self.elements->asSequence()->indexOf(element)
+end
+
+constraints
+
+context List::append(element:OclAny)
+  post itemAdded:
+    self.size@pre() + 1 = self.size()
+  post itemIsLast:
+    self.elements->at(self.elements->size()) = element
