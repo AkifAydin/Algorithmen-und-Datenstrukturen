@@ -17,7 +17,7 @@ class HAWListImplTest {
     }
     @org.junit.jupiter.api.Test
     void add() {
-        HAWList list = new HAWListImpl();
+        HAWList<String> list = new HAWListImpl<>();
         assertEquals(0, list.getSize());
 
         list.add("h");
@@ -41,6 +41,7 @@ class HAWListImplTest {
             if (prev != null) {
                 assertTrue(prev.compareTo(s) <= 0);
             }
+            prev = s;
         }
     }
 
