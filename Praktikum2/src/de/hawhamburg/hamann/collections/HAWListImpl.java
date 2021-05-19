@@ -21,6 +21,11 @@ public class HAWListImpl<E> implements HAWList<E> {
     }
 
     @Override
+    public int find(E item) {
+        return 0;
+    }
+
+    @Override
     public Iterator<E> iterator() {
         return null;
     }

@@ -1,5 +1,8 @@
 package de.hawhamburg.hamann.collections;
 
+import java.util.Comparator;
+import java.util.Iterator;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class HAWListImplTest {
@@ -31,9 +34,11 @@ class HAWListImplTest {
     }
 
     @org.junit.jupiter.api.Test
-    void sort() {
+    void sortSortsElements() {
         HAWList<String> list = createListWithNames();
-        list.sort((String e1, String e2) -> e1.compareTo(e2));
+        list.sort(Comparator.naturalOrder());
+
+        Iterator<String> it = list.iterator();
 
         String prev = null;
 
@@ -42,6 +47,19 @@ class HAWListImplTest {
                 assertTrue(prev.compareTo(s) <= 0);
             }
             prev = s;
+        }
+    }
+
+    @org.junit.jupiter.api.Test
+    void sortKeepsElements() {
+
+        HAWList<String> listOrg  = createListWithNames();
+        HAWList<String> listSort = createListWithNames();
+
+        listSort.sort(Comparator.naturalOrder());
+
+        for (String s : listOrg) {
+            assertTrue(listSort.contains(s), "Item is gone after search!");
         }
     }
 
