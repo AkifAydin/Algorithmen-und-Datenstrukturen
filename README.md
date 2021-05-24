@@ -58,7 +58,7 @@ Bitte nutzen Sie das oben verwendete Muster für den Namen Ihres Branches.
 Der Aufbau ist wie folgt:
 
 ```bash
-ADP_(SoSe|WiSe){$Jahr}_Gruppe{$Praktikumsgruppe}_Praktikum{$NummerdesPraktikums}
+ADP_(SoSe|WiSe){$Jahr}_Gruppe{$Praktikumsgruppe}_Team{$Teamnummer}_Praktikum{$NummerdesPraktikums}
 ```
 
 Im Screenshot wird also ein Branch für das 4. Praktikum im Sommersemester 2021 des Teams 9 der 1. Praktikumsgruppe angelegt.
