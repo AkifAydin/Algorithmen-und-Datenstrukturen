@@ -2,14 +2,12 @@ package de.hawhamburg.hamann.rc;
 
 import de.hawhamburg.hamann.collections.HAWList;
 
-import java.util.*;
-
 public class Main {
 
     public static void main(String[] args) {
-	    int numMonsterStart  = 7;
-        int numChildrenStart = 7;
-        int seatsInBoat = 4;
+	    int numMonsterStart  = 3;
+        int numChildrenStart = 3;
+        int seatsInBoat = 2;
 
         int[] numMonster  = new int[RiverSide.values().length];
         int[] numChildren = new int[RiverSide.values().length];
@@ -38,7 +36,7 @@ public class Main {
         for (RcState state : moves) {
             if (state.score() == RcState.STATE_SUCCESS) {
                 System.out.println("Found a solution:");
-                System.out.println(state.toString());
+                System.out.println(state);
                 System.out.println();
 
                 continue;
